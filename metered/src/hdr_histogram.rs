@@ -173,11 +173,9 @@ impl Serialize for HdrHistogram {
         tup.serialize_entry("max", qual!(hdr.max()))?;
         tup.serialize_entry("mean", qual!(hdr.mean()))?;
         tup.serialize_entry("stdev", qual!(hdr.stdev()))?;
-        tup.serialize_entry("90%ile", ile!(0.9))?;
-        tup.serialize_entry("95%ile", ile!(0.95))?;
+        tup.serialize_entry("50%ile", ile!(0.50))?;
+        tup.serialize_entry("90%ile", ile!(0.90))?;
         tup.serialize_entry("99%ile", ile!(0.99))?;
-        tup.serialize_entry("99.9%ile", ile!(0.999))?;
-        tup.serialize_entry("99.99%ile", ile!(0.9999))?;
         tup.end()
     }
 }
